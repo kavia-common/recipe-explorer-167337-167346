@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './components/SignIn';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -17,8 +17,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App" style={{ minHeight: '100vh', background: theme === 'light' ? '#f9fafb' : '#1a1a1a' }}>
+      <header className="App-header" style={{ background: 'transparent', boxShadow: 'none', minHeight: 'auto', padding: '20px 0' }}>
         <button 
           className="theme-toggle" 
           onClick={toggleTheme}
@@ -26,22 +26,10 @@ function App() {
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <main style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+        <SignIn />
+      </main>
     </div>
   );
 }

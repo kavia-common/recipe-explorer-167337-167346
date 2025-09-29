@@ -1,0 +1,266 @@
+:root {
+  /* Colors (subset used by this screen) */
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-121212: #121212;
+  --color-129575: #129575;
+  --color-d9d9d9: #d9d9d9;
+  --color-303030: #303030;
+  --color-ffc107: #ffc107;
+  --color-ff3d00: #ff3d00;
+  --color-4caf50: #4caf50;
+  --color-1976d2: #1976d2;
+  --color-ff9c00: #ff9c00;
+
+  /* Shadows from design system */
+  --shadow-0: 0px 0px 5px 3px #696969;
+  --shadow-1: 0px 8px 25px 0px #202020;
+  --shadow-2: 0px 0px 8px 0px #6c6c6c;
+  --shadow-3: 0px 0px 20px 0px #000000;
+  --shadow-4: 0px 6.3119263649px 19.7247695923px 0px #202020;
+  --shadow-5: 0px 4px 4px 0px #000000;
+  --shadow-7: 0px 2px 10px 0px #000000;
+  --shadow-8: 0px 0px 2px 0px #000000;
+  --shadow-9: 0px 0px 10px 0px #000000;
+  --shadow-10: 0px 0px 30px 0px #000000;
+
+  /* Typography tokens (subset) */
+  --typo-hello-family: "Poppins", Arial, sans-serif;         /* typo_60 */
+  --typo-hello-size: 30px;
+  --typo-hello-weight: 600;
+  --typo-hello-line: 45px;
+  --typo-hello-letter: 0;
+
+  --typo-welcome-family: "Poppins", Arial, sans-serif;       /* typo_61 */
+  --typo-welcome-size: 20px;
+  --typo-welcome-weight: 400;
+  --typo-welcome-line: 30px;
+
+  --typo-forgot-family: "Poppins", Arial, sans-serif;        /* typo_62 */
+  --typo-forgot-size: 11px;
+  --typo-forgot-weight: 400;
+  --typo-forgot-line: 16.5px;
+
+  --typo-cta-family: "Poppins", Arial, sans-serif;           /* typo_58 */
+  --typo-cta-size: 16px;
+  --typo-cta-weight: 600;
+  --typo-cta-line: 24px;
+
+  --typo-caption-family: "Poppins", Arial, sans-serif;       /* typo_64/65 */
+  --typo-caption-size: 11px;
+  --typo-caption-weight: 400;
+  --typo-caption-line: 16.5px;
+
+  --typo-label-family: "Poppins", Arial, sans-serif;         /* typo_66 */
+  --typo-label-size: 14px;
+  --typo-label-weight: 400;
+  --typo-label-line: 21px;
+
+  --typo-small-family: "Poppins", Arial, sans-serif;         /* typo_63 small link */
+  --typo-small-size: 11px;
+  --typo-small-weight: 500;
+  --typo-small-line: 16.5px;
+
+  /* Artboard */
+  --artboard-width: 375px;
+  --artboard-height: 812px;
+
+  /* Style tokens used */
+  --style-10-bg: var(--color-ffffff);          /* screen background */
+  --style-11-bg: var(--color-129575);          /* Big Button bg */
+  --style-11-radius: 10px;
+  --style-12-opacity: 0;                        /* transparent bg */
+  --style-18-bg: var(--color-121212);          /* dark text bg usage */
+  --style-19-bg: var(--color-ff9c00);
+  --style-28-color: var(--color-d9d9d9);
+  --style-30-border: var(--color-d9d9d9);
+  --style-30-border-width: 1.5px;
+  --style-30-radius: 10px;
+  --style-32-bg: var(--color-121212);
+  --style-32-radius: 100px;
+  --style-33-bg: var(--color-303030);
+  --style-34-bg: var(--color-303030);
+  --style-34-radius: 1.6px;
+  --style-126-bg: var(--color-ffffff);
+  --style-126-radius: 10px;
+  --style-126-shadow: var(--shadow-0);
+}
+
+/* Reset and base */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--style-10-bg);
+  color: var(--color-121212);
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.screen {
+  position: relative;
+  width: var(--artboard-width);
+  height: var(--artboard-height);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--style-10-bg);
+  border-radius: 30px; /* style_10 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* subtle modern depth */
+}
+.abs {
+  position: absolute;
+}
+.text {
+  white-space: pre-wrap;
+}
+
+/* Utility for hairlines */
+.hairline {
+  height: 1px;
+  background: var(--style-28-color);
+}
+
+/* Button base */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Input base to mimic the rectangle container + placeholder text */
+.input-wrap {
+  position: absolute;
+  width: 315px;
+  height: 81px;
+}
+.input-rect {
+  position: absolute;
+  width: 315px;
+  height: 55px;
+  border: var(--style-30-border-width) solid var(--style-30-border);
+  border-radius: var(--style-30-radius);
+  background: var(--color-ffffff);
+}
+.input-label {
+  position: absolute;
+  font-family: var(--typo-label-family);
+  font-size: var(--typo-label-size);
+  font-weight: var(--typo-label-weight);
+  line-height: var(--typo-label-line);
+  color: var(--color-121212);
+}
+.input-placeholder {
+  position: absolute;
+  font-family: var(--typo-caption-family);
+  font-size: var(--typo-caption-size);
+  font-weight: var(--typo-caption-weight);
+  line-height: var(--typo-caption-line);
+  color: var(--color-d9d9d9);
+}
+
+/* Home indicator line */
+.home-indicator {
+  width: 135px;
+  height: 5px;
+  background: var(--style-32-bg);
+  border-radius: var(--style-32-radius);
+}
+
+/* Big Button */
+.big-button {
+  width: 315px;
+  height: 60px;
+  background: var(--style-11-bg);
+  border-radius: var(--style-11-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter .2s ease, transform .2s ease;
+}
+.big-button:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+.big-button .label {
+  font-family: var(--typo-cta-family);
+  font-size: var(--typo-cta-size);
+  font-weight: var(--typo-cta-weight);
+  line-height: var(--typo-cta-line);
+  color: var(--color-ffffff);
+}
+.big-button .icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+/* Social circular buttons style_126 */
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--style-126-radius);
+  background: var(--style-126-bg);
+  box-shadow: var(--style-126-shadow);
+}
+
+/* Status bar text */
+.status-time {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 17.9px;
+  letter-spacing: -0.165px;
+  color: #303030;
+}
+
+/* Title text styles */
+.heading-hello {
+  font-family: var(--typo-hello-family);
+  font-size: var(--typo-hello-size);
+  font-weight: var(--typo-hello-weight);
+  line-height: var(--typo-hello-line);
+  color: var(--color-000000);
+}
+.sub-welcome {
+  font-family: var(--typo-welcome-family);
+  font-size: var(--typo-welcome-size);
+  font-weight: var(--typo-welcome-weight);
+  line-height: var(--typo-welcome-line);
+  color: var(--color-121212);
+}
+
+/* Forgot password */
+.forgot {
+  font-family: var(--typo-forgot-family);
+  font-size: var(--typo-forgot-size);
+  font-weight: var(--typo-forgot-weight);
+  line-height: var(--typo-forgot-line);
+  color: var(--color-ff9c00);
+}
+
+/* Bottom sign up link */
+.signup-link {
+  font-family: var(--typo-small-family);
+  font-size: var(--typo-small-size);
+  font-weight: var(--typo-small-weight);
+  line-height: var(--typo-small-line);
+  color: var(--color-000000);
+}
+
+/* Or Sign in With label */
+.or-with {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16.5px;
+  color: var(--color-d9d9d9);
+}
+
+/* Ensure images are crisp at exact sizes */
+.img {
+  display: block;
+}
